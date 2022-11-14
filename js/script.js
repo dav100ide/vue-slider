@@ -1,23 +1,23 @@
 /*=======================
 	functions
 ===========================*/
-function changeSlide(direction) {
-   if (direction === 'next') {
-      if (this.currentSlide < this.slides.length - 1) {
-         this.currentSlide++;
-      } else {
-         this.currentSlide = 0;
-      }
-   } else if (direction === 'prev') {
-      if (this.currentSlide > 0) {
-         this.currentSlide--;
-      } else {
-         this.currentSlide = this.slides.length - 1;
-      }
-   } else if (!isNaN(direction)) {
-      this.currentSlide = direction;
-   }
-}
+// function changeSlide(direction) {
+//    if (direction === 'next') {
+//       if (this.currentSlide < this.slides.length - 1) {
+//          this.currentSlide++;
+//       } else {
+//          this.currentSlide = 0;
+//       }
+//    } else if (direction === 'prev') {
+//       if (this.currentSlide > 0) {
+//          this.currentSlide--;
+//       } else {
+//          this.currentSlide = this.slides.length - 1;
+//       }
+//    } else if (!isNaN(direction)) {
+//       this.currentSlide = direction;
+//    }
+// }
 /*=======================
 	main
 ===========================*/
@@ -54,9 +54,9 @@ createApp({
          ],
          currentSlide: 0,
          cssActive: 'active',
-         timer: setInterval(() => {
-            this.changeSlide('next');
-         }, 3000),
+         // timer: setInterval(function autoPlayer() {
+         //    this.changeSlide('next');
+         // }, 1000),
       };
    },
    methods: {
@@ -78,15 +78,15 @@ createApp({
             this.currentSlide = direction;
          }
       },
-      autoPlay() {
-         setInterval(() => {
-            this.changeSlide('next');
-         }, 3000);
-      },
-      stopAutoPlay() {
-         clearInterval(this.timer);
-         console.log('mouse enter');
-      },
+      // autoPlay() {
+      //    this.timer;
+
+      //    console.log('mouse leave', this.timer);
+      // },
+      // stopAutoPlay() {
+      //    clearInterval(this.timer);
+      //    console.log('mouse enter');
+      // },
    },
 }).mount('#app');
 
