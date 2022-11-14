@@ -1,3 +1,26 @@
+/*=======================
+	functions
+===========================*/
+function changeSlide(direction) {
+   if (direction === 'next') {
+      if (this.currentSlide < this.slides.length - 1) {
+         this.currentSlide++;
+      } else {
+         this.currentSlide = 0;
+      }
+   } else if (direction === 'prev') {
+      if (this.currentSlide > 0) {
+         this.currentSlide--;
+      } else {
+         this.currentSlide = this.slides.length - 1;
+      }
+   } else if (!isNaN(direction)) {
+      this.currentSlide = direction;
+   }
+}
+/*=======================
+	main
+===========================*/
 const { createApp } = Vue;
 createApp({
    data() {
@@ -31,6 +54,10 @@ createApp({
          ],
          currentSlide: 0,
          cssActive: 'active',
+         playing: true,
+         timer: setInterval(() => {
+            this.changeSlide('next');
+         }, 3000),
       };
    },
    methods: {
@@ -51,6 +78,17 @@ createApp({
          } else if (!isNaN(direction)) {
             this.currentSlide = direction;
          }
+      },
+      autoPlay() {
+         this.playing = true;
+         if (this.playing) {
+            this.timer;
+         }
+         console.log(this.playing, 'mouseenter');
+      },
+      stopAutoPlay() {
+         this.playing = false;
+         console.log(this.playing);
       },
    },
 }).mount('#app');
