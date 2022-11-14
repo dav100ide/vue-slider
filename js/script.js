@@ -48,6 +48,8 @@ createApp({
             } else {
                this.currentSlide = this.slides.length - 1;
             }
+         } else if (!isNaN(direction)) {
+            this.currentSlide = direction;
          }
       },
    },
