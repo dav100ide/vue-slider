@@ -54,9 +54,9 @@ createApp({
          ],
          currentSlide: 0,
          cssActive: 'active',
-         // timer: setInterval(function autoPlayer() {
-         //    this.changeSlide('next');
-         // }, 1000),
+         timer: setInterval(() => {
+            this.changeSlide('next');
+         }, 3000),
       };
    },
    methods: {
@@ -78,18 +78,15 @@ createApp({
             this.currentSlide = direction;
          }
       },
-      // autoPlay() {
-      //    this.timer;
-
-      //    console.log('mouse leave', this.timer);
-      // },
-      // stopAutoPlay() {
-      //    clearInterval(this.timer);
-      //    console.log('mouse enter');
-      // },
+      autoPlay() {
+         this.timer = setInterval(() => {
+            this.changeSlide('next');
+         }, 3000);
+         console.log('mouse leave', this.timer);
+      },
+      stopAutoPlay() {
+         clearInterval(this.timer);
+         console.log('mouse enter');
+      },
    },
 }).mount('#app');
-
-/*=======================
-	main
-===========================*/
