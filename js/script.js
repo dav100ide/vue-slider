@@ -54,7 +54,9 @@ createApp({
          ],
          currentSlide: 0,
          cssActive: 'active',
-         playing: true,
+         timer: setInterval(() => {
+            this.changeSlide('next');
+         }, 3000),
       };
    },
    methods: {
@@ -79,11 +81,10 @@ createApp({
       autoPlay() {
          setInterval(() => {
             this.changeSlide('next');
-         }, 2000);
-         console.log('mouse leave');
+         }, 3000);
       },
       stopAutoPlay() {
-         clearInterval('COSA CI METTO QUAAA???');
+         clearInterval(this.timer);
          console.log('mouse enter');
       },
    },
