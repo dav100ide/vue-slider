@@ -1,24 +1,4 @@
 /*=======================
-	functions
-===========================*/
-// function changeSlide(direction) {
-//    if (direction === 'next') {
-//       if (this.currentSlide < this.slides.length - 1) {
-//          this.currentSlide++;
-//       } else {
-//          this.currentSlide = 0;
-//       }
-//    } else if (direction === 'prev') {
-//       if (this.currentSlide > 0) {
-//          this.currentSlide--;
-//       } else {
-//          this.currentSlide = this.slides.length - 1;
-//       }
-//    } else if (!isNaN(direction)) {
-//       this.currentSlide = direction;
-//    }
-// }
-/*=======================
 	main
 ===========================*/
 const { createApp } = Vue;
